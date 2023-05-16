@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+
 public class ControllerZoo {
     private List<Lion> lions;
     private List<Tiger> tigers;
@@ -20,43 +21,32 @@ public class ControllerZoo {
         this.eagles = new ArrayList<>();
     }
 
+    public ControllerZoo(List<Lion> lions, List<Tiger> tigers, List<Eagle> eagles) {
+        this.lions = lions;
+        this.tigers = tigers;
+        this.eagles = eagles;
+    }
+
+    public List<Lion> getLions() {return lions;}
+    public List<Tiger> getTigers() {return tigers;}
+    public List<Eagle> getEagles() {return eagles;}
+
     public void addLion(Lion lion){
         lions.add(lion);
     }
-
     public void addTiger(Tiger tiger){
         tigers.add(tiger);
     }
-
     public void addEagle(Eagle eagle){
         eagles.add(eagle);
     }
 
-    /* Da Modificare con generic
-    public Lion leoneAlto() {
-        return lions.stream().max(Comparator.comparing(Lion::getHeight)).orElse(null);
+    public <T extends Animal> T findTallest(List<T> animals) {
+        return animals.stream().max(Comparator.comparing(Animal::getHeight)).orElse(null);
     }
-
-    public Lion leoneBasso() {
-        return lions.stream().min(Comparator.comparing(Lion::getHeight)).orElse(null);
+    public <T extends Animal> T findShortest(List<T> animals) {
+        return animals.stream().min(Comparator.comparing(Animal::getHeight)).orElse(null);
     }
-
-    public Tiger tigreAlto() {
-        return tigers.stream().max(Comparator.comparing(Tiger::getHeight)).orElse(null);
-    }
-
-    public Tiger tigreBasso() {
-        return tigers.stream().min(Comparator.comparing(Tiger::getHeight)).orElse(null);
-    }
-
-    public Eagle aquilaAlto() {
-        return eagles.stream().max(Comparator.comparing(Eagle::getHeight)).orElse(null);
-    }
-
-    public Eagle aquilaBasso() {
-        return eagles.stream().min(Comparator.comparing(Eagle::getHeight)).orElse(null);
-    }*/
-
 
     public Animal getAnimalWithLongestTail() {
         Lion lionWithLongestTail = lions.stream().max(Comparator.comparing(Lion::getTailLength)).orElse(null);
