@@ -1,74 +1,75 @@
 package Controller;
 
-import Model.Animale;
-import Model.Aquila;
-import Model.Leone;
-import Model.Tigre;
+import Model.Animal;
+import Model.Eagle;
+import Model.Lion;
+import Model.Tiger;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 public class ControllerZoo {
-    private List<Leone> leoni;
-    private List<Tigre> tigri;
-    private List<Aquila> aquile;
+    private List<Lion> lions;
+    private List<Tiger> tigers;
+    private List<Eagle> eagles;
 
     public ControllerZoo() {
-        this.leoni = new ArrayList<>();
-        this.tigri = new ArrayList<>();
-        this.aquile = new ArrayList<>();
+        this.lions = new ArrayList<>();
+        this.tigers = new ArrayList<>();
+        this.eagles = new ArrayList<>();
     }
 
-    public void addLeone(Leone leone){
-        leoni.add(leone);
+    public void addLion(Lion lion){
+        lions.add(lion);
     }
 
-    public void addTigre(Tigre tigre){
-        tigri.add(tigre);
+    public void addTiger(Tiger tiger){
+        tigers.add(tiger);
     }
 
-    public void addAquila(Aquila aquila){
-        aquile.add(aquila);
+    public void addEagle(Eagle eagle){
+        eagles.add(eagle);
     }
 
-    public Leone leoneAlto() {
-        return leoni.stream().max(Comparator.comparing(Leone::getAltezza)).orElse(null);
+    /* Da Modificare con generic
+    public Lion leoneAlto() {
+        return lions.stream().max(Comparator.comparing(Lion::getHeight)).orElse(null);
     }
 
-    public Leone leoneBasso() {
-        return leoni.stream().min(Comparator.comparing(Leone::getAltezza)).orElse(null);
+    public Lion leoneBasso() {
+        return lions.stream().min(Comparator.comparing(Lion::getHeight)).orElse(null);
     }
 
-    public Tigre tigreAlto() {
-        return tigri.stream().max(Comparator.comparing(Tigre::getAltezza)).orElse(null);
+    public Tiger tigreAlto() {
+        return tigers.stream().max(Comparator.comparing(Tiger::getHeight)).orElse(null);
     }
 
-    public Tigre tigreBasso() {
-        return tigri.stream().min(Comparator.comparing(Tigre::getAltezza)).orElse(null);
+    public Tiger tigreBasso() {
+        return tigers.stream().min(Comparator.comparing(Tiger::getHeight)).orElse(null);
     }
 
-    public Aquila aquilaAlto() {
-        return aquile.stream().max(Comparator.comparing(Aquila::getAltezza)).orElse(null);
+    public Eagle aquilaAlto() {
+        return eagles.stream().max(Comparator.comparing(Eagle::getHeight)).orElse(null);
     }
 
-    public Aquila aquilaBasso() {
-        return aquile.stream().min(Comparator.comparing(Aquila::getAltezza)).orElse(null);
-    }
+    public Eagle aquilaBasso() {
+        return eagles.stream().min(Comparator.comparing(Eagle::getHeight)).orElse(null);
+    }*/
 
 
-    public Animale animaleConCodaLunga() {
-        Leone leoneConCodaLunga = leoni.stream().max(Comparator.comparing(Leone::getLunghezzaCoda)).orElse(null);
-        Tigre tigreConCodaLunga = tigri.stream().max(Comparator.comparing(Tigre::getLunghezzaCoda)).orElse(null);
+    public Animal getAnimalWithLongestTail() {
+        Lion lionWithLongestTail = lions.stream().max(Comparator.comparing(Lion::getTailLength)).orElse(null);
+        Tiger tigerWithLongestTail = tigers.stream().max(Comparator.comparing(Tiger::getTailLength)).orElse(null);
 
-        if(leoneConCodaLunga.getLunghezzaCoda() > tigreConCodaLunga.getLunghezzaCoda()){
-            return leoneConCodaLunga;
+        if(lionWithLongestTail.getTailLength() > tigerWithLongestTail.getTailLength()){
+            return lionWithLongestTail;
         }else{
-            return tigreConCodaLunga;
+            return tigerWithLongestTail;
         }
     }
 
-    public Aquila aquilaConMaggioreAperturaAlare() {
-        return aquile.stream().max(Comparator.comparing(Aquila::getAperturaAlare)).orElse(null);
+    public Eagle getEagleWithLargestWingspan() {
+        return eagles.stream().max(Comparator.comparing(Eagle::getWingspan)).orElse(null);
     }
 }
