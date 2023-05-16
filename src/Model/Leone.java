@@ -1,5 +1,8 @@
+package Model;
+
+import Model.Animale;
+
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Leone extends Animale {
     private double lunghezzaCoda;

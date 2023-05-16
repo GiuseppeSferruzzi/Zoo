@@ -1,13 +1,20 @@
+package Controller;
+
+import Model.Animale;
+import Model.Aquila;
+import Model.Leone;
+import Model.Tigre;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class GestioneZoo {
+public class ControllerZoo {
     private List<Leone> leoni;
     private List<Tigre> tigri;
     private List<Aquila> aquile;
 
-    public GestioneZoo() {
+    public ControllerZoo() {
         this.leoni = new ArrayList<>();
         this.tigri = new ArrayList<>();
         this.aquile = new ArrayList<>();

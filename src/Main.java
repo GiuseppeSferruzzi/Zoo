@@ -1,4 +1,8 @@
-import java.sql.Date;
+import Controller.ControllerZoo;
+import Model.Aquila;
+import Model.Leone;
+import Model.Tigre;
+
 import java.time.LocalDate;
 
 public class Main {
@@ -13,25 +17,25 @@ public class Main {
         Aquila a1 = new Aquila("Quila", "topi", 3,LocalDate.of(2005,5,12),8,1,2);
         Aquila a2 = new Aquila("Quilo", "serpenti", 4,LocalDate.of(2005,1,15),10,1.5,2.5);
 
-        GestioneZoo gestioneZoo = new GestioneZoo();
+        ControllerZoo controllerZoo = new ControllerZoo();
 
-        gestioneZoo.addLeone(l1);
-        gestioneZoo.addLeone(l2);
-        gestioneZoo.addTigre(t1);
-        gestioneZoo.addTigre(t2);
-        gestioneZoo.addAquila(a1);
-        gestioneZoo.addAquila(a2);
+        controllerZoo.addLeone(l1);
+        controllerZoo.addLeone(l2);
+        controllerZoo.addTigre(t1);
+        controllerZoo.addTigre(t2);
+        controllerZoo.addAquila(a1);
+        controllerZoo.addAquila(a2);
 
-        System.out.println(gestioneZoo.leoneAlto().getNome());
-        System.out.println(gestioneZoo.leoneBasso().getNome());
+        System.out.println(controllerZoo.leoneAlto().getNome());
+        System.out.println(controllerZoo.leoneBasso().getNome());
 
-        System.out.println(gestioneZoo.tigreAlto().getNome());
-        System.out.println(gestioneZoo.tigreBasso().getNome());
+        System.out.println(controllerZoo.tigreAlto().getNome());
+        System.out.println(controllerZoo.tigreBasso().getNome());
 
-        System.out.println(gestioneZoo.aquilaAlto().getNome());
-        System.out.println(gestioneZoo.aquilaBasso().getNome());
+        System.out.println(controllerZoo.aquilaAlto().getNome());
+        System.out.println(controllerZoo.aquilaBasso().getNome());
 
-        System.out.println(gestioneZoo.animaleConCodaLunga().getNome());
-        System.out.println(gestioneZoo.aquilaConMaggioreAperturaAlare().getNome());
+        System.out.println(controllerZoo.animaleConCodaLunga().getNome());
+        System.out.println(controllerZoo.aquilaConMaggioreAperturaAlare().getNome());
     }
 }

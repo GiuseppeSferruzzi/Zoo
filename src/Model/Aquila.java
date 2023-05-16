@@ -1,5 +1,8 @@
+package Model;
+
+import Model.Animale;
+
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Aquila extends Animale {
     private double aperturaAlare;
