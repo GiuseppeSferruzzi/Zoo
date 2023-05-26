@@ -1,8 +1,8 @@
-package Model;
+package model;
 
 import java.time.LocalDate;
 
-public class Animal {
+public abstract class Animal {
     protected String name;
     protected String favoriteFood;
     protected int age;
